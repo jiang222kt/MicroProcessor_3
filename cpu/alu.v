@@ -34,7 +34,7 @@ always @(*) begin
         br_taken <= `DISABLE;
     end
     else if(alucode == `ALU_SLTU) begin
-        alu_result <= (($unsigned(op1) < $unsigned(op2))? {{31'b0}, {1'b1}}: 32'b0);
+        alu_result <= ((op1 < op2)? {{31'b0}, {1'b1}}: 32'b0);
         br_taken <= `DISABLE;
     end
     else if(alucode == `ALU_XOR) begin
@@ -63,26 +63,27 @@ always @(*) begin
     end
     else if(alucode == `ALU_BEQ) begin
         alu_result <= 32'b0;
+        br_taken = ((op1 == op2) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BNE) begin
         alu_result <= 32'b0;
-        br_taken <= `DISABLE;
+        br_taken = ((op1 != op2) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BLT) begin
         alu_result <= 32'b0;
-        br_taken <= `DISABLE;
+        br_taken = (($signed(op1) < $signed(op2)) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BGE) begin
         alu_result <= 32'b0;
-        br_taken <= `DISABLE;
+        br_taken = (($signed(op1) >= $signed(op2)) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BLTU) begin
         alu_result <= 32'b0;
-        br_taken <= `DISABLE;
+        br_taken = ((op1 < op2) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BGEU) begin
         alu_result <= 32'b0;
-        br_taken <= `DISABLE;
+        br_taken = ((op1 >= op2) ? 1'b1 : 1'b0);
     end
     else begin
         alu_result = 32'b0;
