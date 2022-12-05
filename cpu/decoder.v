@@ -148,8 +148,8 @@ always @(*) begin
         alucode <= `ALU_NOP;
     }
 
-    aluop1_type <= (op == `OP || op == `OPIMM || op == `LOAD || op == `STORE || op == `JAL) ? `OP_TYPE_REG : (op == `BRANCH)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_NONE : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
-    aluop2_type <= (op == `OP)? `OP_TYPE_REG : (op == `OPIMM || op == `LOAD || op == `STORE || op == `BRANCH || op == `JAL) ? `OP_TYPE_IMM : (op == `AUIPC)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
+    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JAL) ? `OP_TYPE_REG : (op == `BRANCH)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_NONE : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
+    aluop2_type <= (op == `OP)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD || op == `BRANCH || op == `JAL) ? `OP_TYPE_IMM : (op == `AUIPC)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
     is_load <= (op == `LOAD)? funct3: 3'b111;
     is_store <= (op == `STORE)? funct3 : 3'b111;
 
