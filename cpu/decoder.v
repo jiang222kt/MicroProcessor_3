@@ -23,23 +23,23 @@ assign srcreg1_num = (op == `LUI || op == `AUIPC || op == `JAL)?  5'b0 : ir[19:1
 assign srcreg2_num = (op == `OP || op == `JALR || op == `STORE)? ir[24:20] : 5'b0;
 assign dstreg_num = (op == `BRANCH || op == `STORE)? 5'b0 : ir[11:7];
 
-// if(op == `OPIMM){
-//     if(funct3 == 3'b000 || funct3 == 3'b101){
-//         assign imm = {27'b0, ir[24:20]};
-//     }else{
-//         assign imm = {{20{ir[31]}}, ir[31:20]};
-//     }
-// }else if(op == `LUI || op == `AUIPC){
-//     assign imm = {ir[31:12], 12'b0};
-// }else if(op == `JAL){
-//     assign imm = {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}};
-// }else if(op == `JALR || op == `LOAD){
-//     assign imm = {{20{ir[31]}}, ir[31:20]};
-// }else if(op == `STORE){
-//     assign  imm = {{20{ir[31]}},ir[31:25],ir[11:7]};
-// }else if(op == `BRANCH){
-//     assign imm = {{19{ir[31]}}, ir[31], ir[30:25] ,ir[11:8], ir[7], {1'b0}};
-// }
+// if(op == `OPIMM)
+//     if(funct3 == 3'b000 || funct3 == 3'b101)
+//         assign imm = 27'b0, ir[24:20];
+//     else
+//         assign imm = 20ir[31], ir[31:20];
+    
+// else if(op == `LUI || op == `AUIPC)
+//     assign imm = ir[31:12], 12'b0;
+// else if(op == `JAL)
+//     assign imm = 11ir[31], ir[31],ir[19:12], ir[20], ir[30:21], 1'b0;
+// else if(op == `JALR || op == `LOAD)
+//     assign imm = 20ir[31], ir[31:20];
+// else if(op == `STORE)
+//     assign  imm = 20ir[31],ir[31:25],ir[11:7];
+// else if(op == `BRANCH)
+//     assign imm = 19ir[31], ir[31], ir[30:25] ,ir[11:8], ir[7], 1'b0;
+
 
 assign imm = (op == `OPIMM) ? (funct3 == 3'b000 || funct3 == 3'b101) ? {27'b0, ir[24:20]} : {{20{ir[31]}}, ir[31:20]}
     : (op == `LUI || op == `AUIPC) ? {ir[31:12], 12'b0}
@@ -50,103 +50,103 @@ assign imm = (op == `OPIMM) ? (funct3 == 3'b000 || funct3 == 3'b101) ? {27'b0, i
     : 0;
 
 always @(*) begin
-    if (op == `OPIMM){
-        if(funct3 == 3'b000){
+    if (op == `OPIMM)
+        if(funct3 == 3'b000)
             alucode <= `ALU_ADD;
-        }else if(funct3 == 3'b010){
+        else if(funct3 == 3'b010)
             alucode <= `ALU_SLT;
-        }else if(funct3  == 3'b011){
+        else if(funct3  == 3'b011)
             alucode <= `ALU_SLTU;
-        }else if(funct3 == 3'b100){
+        else if(funct3 == 3'b100)
             alucode <= `ALU_XOR;
-        }else if(funct3 == 3'b110){
+        else if(funct3 == 3'b110)
             alucode <= `ALU_OR;
-        }else if(funct3 == 3'b111){
+        else if(funct3 == 3'b111)
             alucode <= `ALU_AND;
-        }else if(funct3 == 3'b001){
+        else if(funct3 == 3'b001)
             alucode <= `ALU_SLL;
-        }else if(funct3 == 3'b101 && funct7 == 7'b0000000){
+        else if(funct3 == 3'b101 && funct7 == 7'b0000000)
             alucode <= `ALU_SRL;
-        }else if(funct3 == 3'b101 && funct7 == 7'b0100000){
+        else if(funct3 == 3'b101 && funct7 == 7'b0100000)
             alucode <= `ALU_SRA;
-        }else{
+        else
             alucode <=  `ALU_NOP;
-        }
-    }else if(op == `OP){
-        if(funct3 == 3'b000 && funct7 == 7'b0000000){
+        
+    else if(op == `OP)
+        if(funct3 == 3'b000 && funct7 == 7'b0000000)
             alucode <= `ALU_ADD;
-        }else if(funct3 == 3'b000 && funct7 == 7'b0100000){
+        else if(funct3 == 3'b000 && funct7 == 7'b0100000)
             alucode <= `ALU_SUB;
-        }else if(funct3 == 3'b001){
+        else if(funct3 == 3'b001)
             alucode <= `ALU_SLL;
-        }else if(funct3 == 3'b010){
+        else if(funct3 == 3'b010)
             alucode <= `ALU_SLT;
-        }else if(funct3 == 3'b011){
+        else if(funct3 == 3'b011)
             alucode <= `ALU_SLTU;
-        }else if(funct3 == 3'b100){
+        else if(funct3 == 3'b100)
             alucode <= `ALU_XOR;
-        }else if(funct3 == 3'b101 && funct7 == 7'b0000000){
+        else if(funct3 == 3'b101 && funct7 == 7'b0000000)
             alucode <= `ALU_SRL;
-        }else if(funct3 == 3'b101 && funct7 == 7'b0100000){
+        else if(funct3 == 3'b101 && funct7 == 7'b0100000)
             alucode  <= `ALU_SRA;
-        }else if(funct3 == 3'b110){
+        else if(funct3 == 3'b110)
             alucode  <= `ALU_OR;
-        }else if(funct3 == 3'b111){
+        else if(funct3 == 3'b111)
             alucode <= `ALU_AND;
-        }else{
+        else
             alucode <= `ALU_NOP;
-        }
-    }else if(op == `BRANCH){
-        if(funct3 == 3'b000){
+        
+    else if(op == `BRANCH)
+        if(funct3 == 3'b000)
             alucode <= `ALU_BEQ;
-        }else if(funct3 == 3'b001){
+        else if(funct3 == 3'b001)
             alucode  <=  `ALU_BNE;
-        }else if(funct3 == 3'b100){
+        else if(funct3 == 3'b100)
             alucode <= `ALU_BLT;
-        }else if(funct3 == 3'b101){
+        else if(funct3 == 3'b101)
             alucode <= `ALU_BGE;
-        }else if(funct3 == 3'b110){
+        else if(funct3 == 3'b110)
             alucode <= `ALU_BLTU;
-        }else if(funct3 == 3'b111){
+        else if(funct3 == 3'b111)
             alucode <= `ALU_BGEU;
-        }else{
+        else
             alucode <= `ALU_NOP;
-        }
-    }else if(op == `STORE){
-        if(funct3 == 3'b000){
+        
+    else if(op == `STORE)
+        if(funct3 == 3'b000)
             alucode <= `ALU_SB;
-        }else if(funct3 == 3'b001){
+        else if(funct3 == 3'b001)
             alucode <= `ALU_SH;
-        }else if(funct3 == 3'b010){
+        else if(funct3 == 3'b010)
             alucode <= `ALU_SW; 
-        }else{
+        else
             alucode <= `ALU_NOP;
-        }
-    }else if(op == `LOAD){
-        if(funct3 == 3'b000){
+        
+    else if(op == `LOAD)
+        if(funct3 == 3'b000)
             alucode <= `ALU_LB;
-        }else if(funct3 == 3'b001){ 
+        else if(funct3 == 3'b001) 
             alucode <= `ALU_LH;
-        }else if(funct3 == 3'b10){ 
+        else if(funct3 == 3'b10) 
             alucode <= `ALU_LW;
-        }else if(funct3 == 3'b100){ 
+        else if(funct3 == 3'b100) 
             alucode <= `ALU_LBU;
-        }else if(funct3 == 3'b101){ 
+        else if(funct3 == 3'b101) 
             alucode <= `ALU_LHU;
-        }else{
-            alucode <= ``ALU_NOP;
-        }
-    }else if(op == `LUI){
+        else
+            alucode <= `ALU_NOP;
+        
+    else if(op == `LUI)
         alucode <= `ALU_LUI;
-    }else if(op == `AUIPC){
+    else if(op == `AUIPC)
         alucode <= `ALU_ADD;
-    }else if(op == `JAL){
+    else if(op == `JAL)
         alucode <= `ALU_JAL;
-    }else if(op == `JALR){
+    else if(op == `JALR)
         alucode <= `ALU_JALR;
-    }else{
+    else
         alucode <= `ALU_NOP;
-    }
+    
 
     aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JAL) ? `OP_TYPE_REG : (op == `BRANCH)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_NONE : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
     aluop2_type <= (op == `OP)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD || op == `BRANCH || op == `JAL) ? `OP_TYPE_IMM : (op == `AUIPC)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
