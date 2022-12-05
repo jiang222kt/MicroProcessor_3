@@ -23,31 +23,31 @@ assign srcreg1_num = (op == `LUI || op == `AUIPC || op == `JAL)?  5'b0 : ir[19:1
 assign srcreg2_num = (op == `OP || op == `JALR || op == `STORE)? ir[24:20] : 5'b0;
 assign dstreg_num = (op == `BRANCH || op == `STORE)? 5'b0 : ir[11:7];
 
-if(op == `OPIMM){
-    if(funct3 == 3'b000 || funct3 == 3'b101){
-        assign imm = {27'b0, ir[24:20]};
-    }else{
-        assign imm = {{20{ir[31]}}, ir[31:20]};
-    }
-}else if(op == `LUI || op == `AUIPC){
-    assign imm = {ir[31:12], 12'b0};
-}else if(op == `JAL){
-    assign imm = {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}};
-}else if(op == `JALR || op == `LOAD){
-    assign imm = {{20{ir[31]}}, ir[31:20]};
-}else if(op == `STORE){
-    assign  imm = {{20{ir[31]}},ir[31:25],ir[11:7]};
-}else if(op == `BRANCH){
-    assign imm = {{19{ir[31]}}, ir[31], ir[30:25] ,ir[11:8], ir[7], {1'b0}};
-}
+// if(op == `OPIMM){
+//     if(funct3 == 3'b000 || funct3 == 3'b101){
+//         assign imm = {27'b0, ir[24:20]};
+//     }else{
+//         assign imm = {{20{ir[31]}}, ir[31:20]};
+//     }
+// }else if(op == `LUI || op == `AUIPC){
+//     assign imm = {ir[31:12], 12'b0};
+// }else if(op == `JAL){
+//     assign imm = {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}};
+// }else if(op == `JALR || op == `LOAD){
+//     assign imm = {{20{ir[31]}}, ir[31:20]};
+// }else if(op == `STORE){
+//     assign  imm = {{20{ir[31]}},ir[31:25],ir[11:7]};
+// }else if(op == `BRANCH){
+//     assign imm = {{19{ir[31]}}, ir[31], ir[30:25] ,ir[11:8], ir[7], {1'b0}};
+// }
 
-// assign imm = (op == `OPIMM) ? (funct3 == 3'b000 || funct3 == 3'b101) ? {27'b0, ir[24:20]} : {{20{ir[31]}}, ir[31:20]}
-//     : (op == `LUI || op == `AUIPC) ? {ir[31:12], 12'b0}
-//     : (op == `JAL) ? {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}}
-//     : (op == `JALR || op == `LOAD) ? {{20{ir[31]}}, ir[31:20]}
-//     : (op == `STORE) ? {{20{ir[31]}},ir[31:25],ir[11:7]}
-//     : (op == `BRANCH) ? {{19{ir[31]}}, ir[31], ir[30:25] ,ir[11:8], ir[7], {1'b0}}
-//     : 0;
+assign imm = (op == `OPIMM) ? (funct3 == 3'b000 || funct3 == 3'b101) ? {27'b0, ir[24:20]} : {{20{ir[31]}}, ir[31:20]}
+    : (op == `LUI || op == `AUIPC) ? {ir[31:12], 12'b0}
+    : (op == `JAL) ? {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}}
+    : (op == `JALR || op == `LOAD) ? {{20{ir[31]}}, ir[31:20]}
+    : (op == `STORE) ? {{20{ir[31]}},ir[31:25],ir[11:7]}
+    : (op == `BRANCH) ? {{19{ir[31]}}, ir[31], ir[30:25] ,ir[11:8], ir[7], {1'b0}}
+    : 0;
 
 always @(*) begin
     if (op == `OPIMM){
