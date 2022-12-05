@@ -25,6 +25,24 @@ assign dstreg_num = (op == `BRANCH || op == `STORE)? 5'b0 : ir[11:7];
 assign imm = (op == `)
 
 
+if(op == `OPIMM){
+    if(funct3 == 3'b000 || funct3 == 3'101){
+        assign imm = {27'b0, ir[24:20]};
+    }else{
+        assign imm = {{20{ir[31]}}, ir[31:20]};
+    }
+}else if(op == `LUI || op == `AUIPC){
+    assign imm = {ir[31:12], 12'b0};
+}else if(op == `JAL){
+    assign imm = {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}};
+}else if(op == `JALR || op == `LOAD){
+    assign imm = {{20{ir[31]}}, ir[31:20]};
+}else if(op == `STORE){
+    assign  imm = {{20{ir[31]}},ir[31:25],ir[11:7]};
+}else{
+    assign imm = {{19{ir[31]}}, ir[31],ir[30:25] ,ir[7] , ir[11:8], {1'b0}};
+}
+
 always @(*) begin
     case (op)
         `OPIMM : begin
@@ -46,5 +64,7 @@ always @(*) begin
                 end
                 3'b101 : begin
                     alucode = `
+
+            
     
 endmodule
