@@ -65,3 +65,12 @@ source decoder_tb.tcl
 close_sim
 launch_simulation
 source decoder_tb.tcl
+close_sim
+launch_simulation
+source decoder_tb.tcl
+close_sim
+launch_simulation
+source decoder_tb.tcl
+close_sim
+launch_simulation
+source decoder_tb.tcl

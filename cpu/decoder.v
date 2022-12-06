@@ -20,25 +20,8 @@ wire [6:0] funct7 = ir[31:25];
 wire [2:0] funct3 = ir[14:12];
 
 assign srcreg1_num = (op == `LUI || op == `AUIPC || op == `JAL)?  5'b0 : ir[19:15];
-assign srcreg2_num = (op == `OP || op == `JALR || op == `STORE || op == `BRANCH)? ir[24:20] : 5'b0;
+assign srcreg2_num = (op == `OP || op == `STORE || op == `BRANCH)? ir[24:20] : 5'b0;
 assign dstreg_num = (op == `BRANCH || op == `STORE)? 5'b0 : ir[11:7];
-
-// if(op == `OPIMM)
-//     if(funct3 == 3'b001 || funct3 == 3'b101)
-//         assign imm = 27'b0, ir[24:20];
-//     else
-//         assign imm = 20ir[31], ir[31:20];
-    
-// else if(op == `LUI || op == `AUIPC)
-//     assign imm = ir[31:12], 12'b0;
-// else if(op == `JAL)
-//     assign imm = 11ir[31], ir[31],ir[19:12], ir[20], ir[30:21], 1'b0;
-// else if(op == `JALR || op == `LOAD)
-//     assign imm = 20ir[31], ir[31:20];
-// else if(op == `STORE)
-//     assign  imm = 20ir[31],ir[31:25],ir[11:7];
-// else if(op == `BRANCH)
-//     assign imm = 19ir[31], ir[31], ir[30:25] ,ir[11:8], ir[7], 1'b0;
 
 assign imm = (op == `OPIMM) ? (funct3 == 3'b001 || funct3 == 3'b101) ? {27'b0, ir[24:20]} : {{20{ir[31]}}, ir[31:20]}
     : (op == `LUI || op == `AUIPC) ? {ir[31:12], 12'b0}
@@ -146,8 +129,8 @@ always @(*) begin
     else
         alucode <= `ALU_NOP;
 
-    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JAL || op == `JALR) ? `OP_TYPE_REG : (op == `BRANCH)? `OP_TYPE_PC : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
-    aluop2_type <= (op == `OP)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD || op == `BRANCH || op == `JAL || op == `JALR) ? `OP_TYPE_IMM : (op == `AUIPC)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
+    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JALR || op == `BRANCH) ? `OP_TYPE_REG : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
+    aluop2_type <= (op == `OP || op == `BRANCH)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD) ? `OP_TYPE_IMM : (op == `AUIPC || op == `JAL || op == `JALR) ? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
     is_load <= (op == `LOAD)? 1'b1: 1'b0;
     is_store <= (op == `STORE)? 1'b1 : 1'b0;
     reg_we <= (op == `OP || op == `OPIMM || op == `LUI || op == `AUIPC || op == `LOAD || (op == `JAL && dstreg_num != 5'b0) || (op == `JALR && dstreg_num != 5'b0))? 1'b1 : 1'b0;

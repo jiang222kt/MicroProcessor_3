@@ -7126,3 +7126,2885 @@ $finish called at time : 460 ns : File "/home/denjo/b3exp/cpu/decoder_tb.v" Line
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'decoder_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 8693.859 ; gain = 64.023 ; free physical = 2363 ; free virtual = 12353
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'decoder_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj decoder_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_tb
+WARNING: [VRFC 10-2581] 2156396544 as 32-bit signed integer overflows, using -2138570752 instead [/home/denjo/b3exp/cpu/decoder_tb.v:181]
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+xelab -wto 9da275fcba674a90b66661ae052ee207 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot decoder_tb_behav xil_defaultlib.decoder_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 9da275fcba674a90b66661ae052ee207 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot decoder_tb_behav xil_defaultlib.decoder_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decoder
+Compiling module xil_defaultlib.decoder_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot decoder_tb_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/xsim.dir/decoder_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/xsim.dir/decoder_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Dec  6 17:28:57 2022. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Dec  6 17:28:57 2022...
+run_program: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 8778.910 ; gain = 0.000 ; free physical = 2440 ; free virtual = 12475
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "decoder_tb_behav -key {Behavioral:sim_1:Functional:decoder_tb} -tclbatch {decoder_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source decoder_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ADD:
+	codeword: 00000000101101010000011000110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+ADD test ...ok
+
+SUB:
+	codeword: 01000000101101100000011000110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SUB test ...ok
+
+SLT:
+	codeword: 00000001000101100010011010110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SLT test ...ok
+
+SLTU:
+	codeword: 00000000110001011011011010110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SLTU test ...ok
+
+AND:
+	codeword: 00000000101101010111011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+AND test ...ok
+
+OR:
+	codeword: 00000000110010001110011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+OR test ...ok
+
+XOR:
+	codeword: 00000000110010001100011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+XOR test ...ok
+
+SLL:
+	codeword: 00000000110001011001011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SLL test ...ok
+
+SRL:
+	codeword: 00000000101101100101011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SRL test ...ok
+
+SRA:
+	codeword: 01000000101101011101011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SRA test ...ok
+
+ADDI:
+	codeword: 11111111111100000000010100010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+ADDI test ...ok
+
+ADDI:
+	codeword: 00000000000101010000010110010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+ADDI test ...ok
+
+SLTI:
+	codeword: 00000000000001011010011000010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SLTI test ...ok
+
+SLTI:
+	codeword: 11111111111101011010011000010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTI test ...ok
+
+SLTIU:
+	codeword: 00000000000001011011011010010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTIU test ...ok
+
+SLTIU:
+	codeword: 11111111111101011011011010010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTIU test ...ok
+
+ANDI:
+	codeword: 00000000000101011111011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ANDI test ...ok
+
+ANDI:
+	codeword: 11111111111101011111011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ANDI test ...ok
+
+ORI:
+	codeword: 00000000000001011110011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ORI test ...ok
+
+ORI:
+	codeword: 11111111111101101110011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+ORI test ...ok
+
+XORI:
+	codeword: 00000000000001011100011100010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+XORI test ...ok
+
+XORI:
+	codeword: 11111111111101011100011100010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+XORI test ...ok
+
+SLLI:
+	codeword: 00000000001001111001011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SLLI test ...ok
+
+SRLI:
+	codeword: 00000000000101111101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRLI test ...ok
+
+SRLI:
+	codeword: 00000000000101011101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRLI test ...ok
+
+SRAI:
+	codeword: 01000000000101011101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRAI test ...ok
+
+LUI:
+	codeword: 00000000000000000001100000110111
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+LUI test ...ok
+
+LUI:
+	codeword: 10000000100010000000010110110111
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+LUI test ...ok
+
+AUIPC:
+	codeword: 00000000000000000000100000010111
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+AUIPC test ...ok
+
+SW:
+	codeword: 00000000101101010010000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SW test ...ok
+
+SH:
+	codeword: 00000000101101010001000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SH test ...ok
+
+SH:
+	codeword: 00000000101101010001000010100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SH test ...ok
+
+SB:
+	codeword: 00000000101101010000000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SB test ...ok
+
+SB:
+	codeword: 00000000101101010000000010100011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+SB test ...ok
+
+LW:
+	codeword: 00000000000001010010011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LW test ...ok
+
+LH:
+	codeword: 00000000000001010001011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LH test ...ok
+
+LH:
+	codeword: 00000000001001010001011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LH test ...ok
+
+LB:
+	codeword: 00000000001001010000011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LB test ...ok
+
+LB:
+	codeword: 00000000001101010000011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LB test ...ok
+
+LHU:
+	codeword: 00000000000001010101011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LHU:
+	codeword: 00000000000101010101011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LHU:
+	codeword: 00000000001001010101011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LBU:
+	codeword: 00000000000101010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+LBU:
+	codeword: 00000000001001010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+LBU:
+	codeword: 00000000001101010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+BEQ:
+	codeword: 11111110110001011000010011100011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+BEQ test ...ok
+
+BEQ:
+	codeword: 00000000110101100000010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BEQ test ...ok
+
+BNE:
+	codeword: 11111100110101100001110011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BNE test ...ok
+
+BNE:
+	codeword: 00000000110001011001010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BNE test ...ok
+
+BLT:
+	codeword: 11111100110101100100010011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BLT:
+	codeword: 11111100111001010100001011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BLT:
+	codeword: 00000000101001110100010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BGE:
+	codeword: 11111010101001110101101011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BGE:
+	codeword: 00000000111001010101010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BGE:
+	codeword: 00000000110101100101010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BLTU:
+	codeword: 11111000110101100110110011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BLTU:
+	codeword: 11111000101001110110101011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BLTU:
+	codeword: 00000000111001010110010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BGEU:
+	codeword: 11111000111001010111001011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+BGEU:
+	codeword: 00000000101001110111010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+BGEU:
+	codeword: 00000000110101100111010001100011
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+JAL:
+	codeword: 00000000100000000000000011101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+ASSERTION FAILED in aluop1_type : signal is '1' but expected '0'
+$finish called at time : 620 ns : File "/home/denjo/b3exp/cpu/decoder_tb.v" Line 327
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'decoder_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 8837.930 ; gain = 59.020 ; free physical = 2386 ; free virtual = 12468
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'decoder_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj decoder_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_tb
+WARNING: [VRFC 10-2581] 2156396544 as 32-bit signed integer overflows, using -2138570752 instead [/home/denjo/b3exp/cpu/decoder_tb.v:181]
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+xelab -wto 9da275fcba674a90b66661ae052ee207 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot decoder_tb_behav xil_defaultlib.decoder_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 9da275fcba674a90b66661ae052ee207 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot decoder_tb_behav xil_defaultlib.decoder_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decoder
+Compiling module xil_defaultlib.decoder_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot decoder_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "decoder_tb_behav -key {Behavioral:sim_1:Functional:decoder_tb} -tclbatch {decoder_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source decoder_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ADD:
+	codeword: 00000000101101010000011000110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+ADD test ...ok
+
+SUB:
+	codeword: 01000000101101100000011000110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SUB test ...ok
+
+SLT:
+	codeword: 00000001000101100010011010110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SLT test ...ok
+
+SLTU:
+	codeword: 00000000110001011011011010110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SLTU test ...ok
+
+AND:
+	codeword: 00000000101101010111011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+AND test ...ok
+
+OR:
+	codeword: 00000000110010001110011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+OR test ...ok
+
+XOR:
+	codeword: 00000000110010001100011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+XOR test ...ok
+
+SLL:
+	codeword: 00000000110001011001011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SLL test ...ok
+
+SRL:
+	codeword: 00000000101101100101011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SRL test ...ok
+
+SRA:
+	codeword: 01000000101101011101011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SRA test ...ok
+
+ADDI:
+	codeword: 11111111111100000000010100010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+ADDI test ...ok
+
+ADDI:
+	codeword: 00000000000101010000010110010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+ADDI test ...ok
+
+SLTI:
+	codeword: 00000000000001011010011000010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SLTI test ...ok
+
+SLTI:
+	codeword: 11111111111101011010011000010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTI test ...ok
+
+SLTIU:
+	codeword: 00000000000001011011011010010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTIU test ...ok
+
+SLTIU:
+	codeword: 11111111111101011011011010010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTIU test ...ok
+
+ANDI:
+	codeword: 00000000000101011111011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ANDI test ...ok
+
+ANDI:
+	codeword: 11111111111101011111011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ANDI test ...ok
+
+ORI:
+	codeword: 00000000000001011110011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ORI test ...ok
+
+ORI:
+	codeword: 11111111111101101110011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+ORI test ...ok
+
+XORI:
+	codeword: 00000000000001011100011100010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+XORI test ...ok
+
+XORI:
+	codeword: 11111111111101011100011100010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+XORI test ...ok
+
+SLLI:
+	codeword: 00000000001001111001011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SLLI test ...ok
+
+SRLI:
+	codeword: 00000000000101111101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRLI test ...ok
+
+SRLI:
+	codeword: 00000000000101011101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRLI test ...ok
+
+SRAI:
+	codeword: 01000000000101011101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRAI test ...ok
+
+LUI:
+	codeword: 00000000000000000001100000110111
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+LUI test ...ok
+
+LUI:
+	codeword: 10000000100010000000010110110111
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+LUI test ...ok
+
+AUIPC:
+	codeword: 00000000000000000000100000010111
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+AUIPC test ...ok
+
+SW:
+	codeword: 00000000101101010010000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SW test ...ok
+
+SH:
+	codeword: 00000000101101010001000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SH test ...ok
+
+SH:
+	codeword: 00000000101101010001000010100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SH test ...ok
+
+SB:
+	codeword: 00000000101101010000000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SB test ...ok
+
+SB:
+	codeword: 00000000101101010000000010100011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+SB test ...ok
+
+LW:
+	codeword: 00000000000001010010011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LW test ...ok
+
+LH:
+	codeword: 00000000000001010001011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LH test ...ok
+
+LH:
+	codeword: 00000000001001010001011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LH test ...ok
+
+LB:
+	codeword: 00000000001001010000011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LB test ...ok
+
+LB:
+	codeword: 00000000001101010000011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LB test ...ok
+
+LHU:
+	codeword: 00000000000001010101011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LHU:
+	codeword: 00000000000101010101011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LHU:
+	codeword: 00000000001001010101011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LBU:
+	codeword: 00000000000101010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+LBU:
+	codeword: 00000000001001010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+LBU:
+	codeword: 00000000001101010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+BEQ:
+	codeword: 11111110110001011000010011100011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+BEQ test ...ok
+
+BEQ:
+	codeword: 00000000110101100000010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BEQ test ...ok
+
+BNE:
+	codeword: 11111100110101100001110011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BNE test ...ok
+
+BNE:
+	codeword: 00000000110001011001010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BNE test ...ok
+
+BLT:
+	codeword: 11111100110101100100010011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BLT:
+	codeword: 11111100111001010100001011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BLT:
+	codeword: 00000000101001110100010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BGE:
+	codeword: 11111010101001110101101011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BGE:
+	codeword: 00000000111001010101010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BGE:
+	codeword: 00000000110101100101010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BLTU:
+	codeword: 11111000110101100110110011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BLTU:
+	codeword: 11111000101001110110101011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BLTU:
+	codeword: 00000000111001010110010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BGEU:
+	codeword: 11111000111001010111001011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+BGEU:
+	codeword: 00000000101001110111010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+BGEU:
+	codeword: 00000000110101100111010001100011
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+JAL:
+	codeword: 00000000100000000000000011101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JAL test ...ok
+
+JAL:
+	codeword: 00000000110000000000000001101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JAL test ...ok
+
+JAL:
+	codeword: 00000000100000000000010111101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JAL test ...ok
+
+JALR:
+	codeword: 00000000100001011000000011100111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+ASSERTION FAILED in srcreg2_num : signal is ' 8' but expected '          0'
+$finish called at time : 650 ns : File "/home/denjo/b3exp/cpu/decoder_tb.v" Line 339
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'decoder_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8982.000 ; gain = 64.023 ; free physical = 2427 ; free virtual = 12472
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'decoder_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj decoder_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_tb
+WARNING: [VRFC 10-2581] 2156396544 as 32-bit signed integer overflows, using -2138570752 instead [/home/denjo/b3exp/cpu/decoder_tb.v:181]
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+xelab -wto 9da275fcba674a90b66661ae052ee207 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot decoder_tb_behav xil_defaultlib.decoder_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 9da275fcba674a90b66661ae052ee207 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot decoder_tb_behav xil_defaultlib.decoder_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.decoder
+Compiling module xil_defaultlib.decoder_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot decoder_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/denjo/b3exp/cpu/decoder/decoder.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "decoder_tb_behav -key {Behavioral:sim_1:Functional:decoder_tb} -tclbatch {decoder_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source decoder_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ADD:
+	codeword: 00000000101101010000011000110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+ADD test ...ok
+
+SUB:
+	codeword: 01000000101101100000011000110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SUB test ...ok
+
+SLT:
+	codeword: 00000001000101100010011010110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SLT test ...ok
+
+SLTU:
+	codeword: 00000000110001011011011010110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+SLTU test ...ok
+
+AND:
+	codeword: 00000000101101010111011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+AND test ...ok
+
+OR:
+	codeword: 00000000110010001110011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+OR test ...ok
+
+XOR:
+	codeword: 00000000110010001100011100110011
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_0_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+XOR test ...ok
+
+SLL:
+	codeword: 00000000110001011001011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SLL test ...ok
+
+SRL:
+	codeword: 00000000101101100101011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SRL test ...ok
+
+SRA:
+	codeword: 01000000101101011101011110110011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SRA test ...ok
+
+ADDI:
+	codeword: 11111111111100000000010100010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+ADDI test ...ok
+
+ADDI:
+	codeword: 00000000000101010000010110010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+ADDI test ...ok
+
+SLTI:
+	codeword: 00000000000001011010011000010011
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_1_ln60_excessive_seqblock_chunk: signal == value
+SLTI test ...ok
+
+SLTI:
+	codeword: 11111111111101011010011000010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTI test ...ok
+
+SLTIU:
+	codeword: 00000000000001011011011010010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTIU test ...ok
+
+SLTIU:
+	codeword: 11111111111101011011011010010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+SLTIU test ...ok
+
+ANDI:
+	codeword: 00000000000101011111011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ANDI test ...ok
+
+ANDI:
+	codeword: 11111111111101011111011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ANDI test ...ok
+
+ORI:
+	codeword: 00000000000001011110011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+ORI test ...ok
+
+ORI:
+	codeword: 11111111111101101110011100010011
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_2_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+ORI test ...ok
+
+XORI:
+	codeword: 00000000000001011100011100010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+XORI test ...ok
+
+XORI:
+	codeword: 11111111111101011100011100010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+XORI test ...ok
+
+SLLI:
+	codeword: 00000000001001111001011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SLLI test ...ok
+
+SRLI:
+	codeword: 00000000000101111101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRLI test ...ok
+
+SRLI:
+	codeword: 00000000000101011101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRLI test ...ok
+
+SRAI:
+	codeword: 01000000000101011101011110010011
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+SRAI test ...ok
+
+LUI:
+	codeword: 00000000000000000001100000110111
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_3_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+LUI test ...ok
+
+LUI:
+	codeword: 10000000100010000000010110110111
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+LUI test ...ok
+
+AUIPC:
+	codeword: 00000000000000000000100000010111
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+AUIPC test ...ok
+
+SW:
+	codeword: 00000000101101010010000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SW test ...ok
+
+SH:
+	codeword: 00000000101101010001000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SH test ...ok
+
+SH:
+	codeword: 00000000101101010001000010100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SH test ...ok
+
+SB:
+	codeword: 00000000101101010000000000100011
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_4_ln60_excessive_seqblock_chunk: signal == value
+SB test ...ok
+
+SB:
+	codeword: 00000000101101010000000010100011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+SB test ...ok
+
+LW:
+	codeword: 00000000000001010010011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LW test ...ok
+
+LH:
+	codeword: 00000000000001010001011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LH test ...ok
+
+LH:
+	codeword: 00000000001001010001011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LH test ...ok
+
+LB:
+	codeword: 00000000001001010000011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LB test ...ok
+
+LB:
+	codeword: 00000000001101010000011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+LB test ...ok
+
+LHU:
+	codeword: 00000000000001010101011010000011
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_5_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LHU:
+	codeword: 00000000000101010101011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LHU:
+	codeword: 00000000001001010101011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LHU test ...ok
+
+LBU:
+	codeword: 00000000000101010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+LBU:
+	codeword: 00000000001001010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+LBU:
+	codeword: 00000000001101010100011010000011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+LBU test ...ok
+
+BEQ:
+	codeword: 11111110110001011000010011100011
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_6_ln60_excessive_seqblock_chunk: signal == value
+BEQ test ...ok
+
+BEQ:
+	codeword: 00000000110101100000010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BEQ test ...ok
+
+BNE:
+	codeword: 11111100110101100001110011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BNE test ...ok
+
+BNE:
+	codeword: 00000000110001011001010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BNE test ...ok
+
+BLT:
+	codeword: 11111100110101100100010011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BLT:
+	codeword: 11111100111001010100001011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BLT:
+	codeword: 00000000101001110100010001100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+BLT test ...ok
+
+BGE:
+	codeword: 11111010101001110101101011100011
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_7_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BGE:
+	codeword: 00000000111001010101010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BGE:
+	codeword: 00000000110101100101010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGE test ...ok
+
+BLTU:
+	codeword: 11111000110101100110110011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BLTU:
+	codeword: 11111000101001110110101011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BLTU:
+	codeword: 00000000111001010110010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BLTU test ...ok
+
+BGEU:
+	codeword: 11111000111001010111001011100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+BGEU:
+	codeword: 00000000101001110111010001100011
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_8_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+BGEU:
+	codeword: 00000000110101100111010001100011
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+BGEU test ...ok
+
+JAL:
+	codeword: 00000000100000000000000011101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JAL test ...ok
+
+JAL:
+	codeword: 00000000110000000000000001101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JAL test ...ok
+
+JAL:
+	codeword: 00000000100000000000010111101111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JAL test ...ok
+
+JALR:
+	codeword: 00000000100001011000000011100111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JALR test ...ok
+
+JALR:
+	codeword: 00000000110000001000000001100111
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+	decoder_tb.xilinx_isim_temp_9_ln60_excessive_seqblock_chunk: signal == value
+JALR test ...ok
+
+all decoder-tests passed!
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'decoder_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8998.008 ; gain = 16.008 ; free physical = 2424 ; free virtual = 12470
