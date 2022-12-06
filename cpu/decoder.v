@@ -40,7 +40,6 @@ assign dstreg_num = (op == `BRANCH || op == `STORE)? 5'b0 : ir[11:7];
 // else if(op == `BRANCH)
 //     assign imm = 19ir[31], ir[31], ir[30:25] ,ir[11:8], ir[7], 1'b0;
 
-
 assign imm = (op == `OPIMM) ? (funct3 == 3'b000 || funct3 == 3'b101) ? {27'b0, ir[24:20]} : {{20{ir[31]}}, ir[31:20]}
     : (op == `LUI || op == `AUIPC) ? {ir[31:12], 12'b0}
     : (op == `JAL) ? {{11{ir[31]}}, ir[31],ir[19:12], ir[20], ir[30:21], {1'b0}}
@@ -146,10 +145,12 @@ always @(*) begin
         alucode <= `ALU_JALR;
     else
         alucode <= `ALU_NOP;
-    
 
-    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JAL) ? `OP_TYPE_REG : (op == `BRANCH)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_NONE : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
-    aluop2_type <= (op == `OP)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD || op == `BRANCH || op == `JAL) ? `OP_TYPE_IMM : (op == `AUIPC)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
+    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JAL || op == `JALR) ? `OP_TYPE_REG : (op == `BRANCH)? `OP_TYPE_PC : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
+    aluop2_type <= (op == `OP)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD || op == `BRANCH || op == `JAL || op == `JALR) ? `OP_TYPE_IMM : (op == `AUIPC)? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
+    is_load <= (op == `LOAD)? funct3: 3'b111; // 3'b111がないから使ったけど大丈夫か？
+    is_store <= (op == `STORE)? funct3 : 3'b111;
+    reg_we <= (op == `OP || op == `OPIMM || op == `LUI || op == `AUIPC || op == `LOAD || (op == `JAL && dstreg_num != 5'b0) || (op == `JALR && dstreg_num != 5'b0))? 1'b1 : 1'b0;
 
 end
 endmodule
