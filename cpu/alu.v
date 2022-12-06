@@ -1,15 +1,15 @@
 `include "define.vh"
 
 module alu(
-    input wire [5:0] alucode,       // 演算種別
-    input wire [31:0] op1,          // 入力データ1
-    input wire [31:0] op2,          // 入力データ2
-    output reg [31:0] alu_result,   // 演算結果
-    output reg br_taken             // 分岐の有無
+    input wire [5:0] alucode,       
+    input wire [31:0] op1,          
+    input wire [31:0] op2,          
+    output reg [31:0] alu_result,   
+    output reg br_taken             
 );
 
 always @(*) begin
-    if(alucode == `ALU_ADD || alucode == `ALU_LB || alucode == `ALU_LH || alucode == `ALU_LW || alucode == `ALU_LBU || alucode == `ALU_LHU || alucode == `ALU_SB || alucode == `ALU_SH) begin
+    if(alucode == `ALU_ADD || alucode == `ALU_LB || alucode == `ALU_LH || alucode == `ALU_LW || alucode == `ALU_LBU || alucode == `ALU_LHU || alucode == `ALU_SB || alucode == `ALU_SH || alucode == `ALU_SW) begin
         alu_result <= op1 + op2;
         br_taken <= `DISABLE;
     end
@@ -18,15 +18,15 @@ always @(*) begin
         br_taken <= `DISABLE;
     end
     else if(alucode == `ALU_LUI) begin 
-        alu_result <= 32'b0;
+        alu_result <= op2;
         br_taken <= `DISABLE;
     end
     else if(alucode == `ALU_JAL) begin
-        alu_result <= op2 + 4;
+        alu_result <= (op2 + 4);
         br_taken   <= `ENABLE;
     end
     else if(alucode == `ALU_JALR) begin
-        alu_result = op2 + 4;
+        alu_result <= (op2 + 4);
         br_taken   <= `ENABLE;
     end
     else if(alucode == `ALU_SLT) begin
@@ -63,30 +63,30 @@ always @(*) begin
     end
     else if(alucode == `ALU_BEQ) begin
         alu_result <= 32'b0;
-        br_taken = ((op1 == op2) ? 1'b1 : 1'b0);
+        br_taken <= ((op1 == op2) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BNE) begin
         alu_result <= 32'b0;
-        br_taken = ((op1 != op2) ? 1'b1 : 1'b0);
+        br_taken <= ((op1 != op2) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BLT) begin
         alu_result <= 32'b0;
-        br_taken = (($signed(op1) < $signed(op2)) ? 1'b1 : 1'b0);
+        br_taken <= (($signed(op1) < $signed(op2)) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BGE) begin
         alu_result <= 32'b0;
-        br_taken = (($signed(op1) >= $signed(op2)) ? 1'b1 : 1'b0);
+        br_taken <= (($signed(op1) >= $signed(op2)) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BLTU) begin
         alu_result <= 32'b0;
-        br_taken = ((op1 < op2) ? 1'b1 : 1'b0);
+        br_taken <= ((op1 < op2) ? 1'b1 : 1'b0);
     end
     else if(alucode == `ALU_BGEU) begin
         alu_result <= 32'b0;
-        br_taken = ((op1 >= op2) ? 1'b1 : 1'b0);
+        br_taken <= ((op1 >= op2) ? 1'b1 : 1'b0);
     end
     else begin
-        alu_result = 32'b0;
+        alu_result <= 32'b0;
         br_taken <= `DISABLE;
     end
     end

@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:20:35
+/home/denjo/b3exp/cpu/alu.v,1670311002,verilog,,/home/denjo/b3exp/cpu/alu_tb.v,/home/denjo/b3exp/cpu/define.vh,alu,,,,,,,,
+/home/denjo/b3exp/cpu/alu/alu.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+/home/denjo/b3exp/cpu/alu_tb.v,1670226131,verilog,,,/home/denjo/b3exp/cpu/define.vh,alu_tb,,,,,,,,
+/home/denjo/b3exp/cpu/define.vh,1669872992,verilog,,,,,,,,,,,,
