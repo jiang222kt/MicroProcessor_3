@@ -10008,3 +10008,7 @@ all decoder-tests passed!
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'decoder_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 8998.008 ; gain = 16.008 ; free physical = 2424 ; free virtual = 12470
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  6 17:38:11 2022...
