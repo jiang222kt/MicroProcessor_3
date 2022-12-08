@@ -11,8 +11,7 @@ module decoder(
     output reg   [1:0]	aluop2_type,  // ALUの入力タイプ
     output reg	     	reg_we,       // レジスタ書き込みの有無
     output reg		is_load,      // ロード命令判定フラグ
-    output reg		is_store,     // ストア命令判定フラグ
-    output reg      is_halt
+    output reg		is_store     // ストア命令判定フラグ
 );
 
 wire [6:0] op = ir[6:0];
