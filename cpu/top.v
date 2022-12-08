@@ -88,4 +88,4 @@ alu alu_module (
     .br_taken(br_taken)
 );
 
-モジュカスくんさぁ
+endmodule
