@@ -7,6 +7,7 @@ module data_memory(
 );
 
 reg [31:0] mem [0:100000];
+initial $readmemh("/home/denjo/b3exp/benchmarks/tests/LoadAndStore/code.hex", mem);
 
 // データを書き込む処理
 always @ (posedge clk) begin
