@@ -1,27 +1,26 @@
+`include "define.vh"
+
 module register_file(
-  input [31:0] rd_addr, //読み出しアドレス
+  input clk,
+  input [4:0] r1_addr, r2_addr, //読み出しアドレス
   input [31:0] wr_addr, //書き込みアドレス
   input [31:0] data_in, //データ
-  output [31:0] rd_data, //レジスタファイルから読み出されたデータ
+  output [31:0] r1_data, r2_data, //レジスタファイルから読み出されたデータ
   input write_enable
 );
 
-  // レジスタを定義
-  reg [31:0] regs [0:100000];
+// レジスタを定義
+reg [31:0] regs [0:31];
 
-  // 初期化データをロードする
-  initial $readmemh("/home/denjo/b3exp/benchmarks/tests/LoadAndStore/code.hex", regs);
-
-  // レジスタを書き込む処理
-  always @ (wr_addr, write_enable, data_in) begin
-    if (write_enable) begin
-      regs[wr_addr] <= data_in;
-    end
+// レジスタを書き込む処理
+always @ (clk) begin
+  if (write_enable = `ENABLE) begin
+    regs[wr_addr] <= data_in;
   end
+end
 
-  // レジスタを読み出す処理
-  always @ (rd_addr) begin
-    rd_data <= regs[rd_addr];
-  end
+// レジスタを読み出す処理
+assign r1_data = regs[r1_addr];
+assign r2_data = regs[r2_addr];
 
 endmodule
