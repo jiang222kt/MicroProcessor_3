@@ -30,7 +30,10 @@ wire br_taken;
 wire [31:0] addr;
 wire [31:0] data_in;
 wire [31:0] data_out;
+wire [5:0] data_alucode;
 wire write_enable;
+wire data_is_store;
+wire data_is_load;
 //register
 wire [31:0] r1_data;
 wire [31:0] r2_data;
@@ -71,9 +74,12 @@ register_file register_file0(
 data_memory data_memory0(
     .clk(clk), 
     .addr(addr), 
+    .alucode(data_alucode),
     .data_in(data_in), 
     .data_out(data_out), 
-    .write_enable(write_enable) 
+    .write_enable(write_enable),
+    .is_store(data_is_store),
+    .is_load(data_is_load)
 );
  
 // 命令メモリ
@@ -150,6 +156,9 @@ assign write_enable =(is_store)?1'b1:1'b0;
 assign reg_write_enable = reg_we;
 assign pc_addr = (alucode ==  `ALU_JALR)? r1_data + imm : pc + imm;
 assign addr = alu_result;
+assign data_alucode = alucode;
+assign data_is_load = is_load;
+assign data_is_store = is_store;
 
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
