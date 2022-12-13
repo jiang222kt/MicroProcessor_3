@@ -12,13 +12,13 @@ initial $readmemh("/home/denjo/b3exp/benchmarks/tests/LoadAndStore/code.hex", me
 // データを書き込む処理
 always @ (posedge clk) begin
   if (write_enable) begin
-    mem[addr] <= data_in;
+    mem[addr>>2] <= data_in;
   end
 end
 
 // データを読み出す処理
 always @ (*) begin
-  data_out <= mem[addr];
+  data_out <= mem[addr>>2];
 end
 
 endmodule

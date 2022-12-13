@@ -1,0 +1,21 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/data_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/hardware_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hardware_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/instruction_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instruction_memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/program_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2458] undeclared symbol uart_tx, assumed default net type wire [/home/denjo/b3exp/cpu/top.v:125]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/uart.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/cpu_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_tb

@@ -7,6 +7,7 @@ module cpu(
 );
 
 // wire and reg
+wire [31:0] ma_load_value;
 //decoder
 wire [31:0] ir;
 wire  [4:0] srcreg1_num;
