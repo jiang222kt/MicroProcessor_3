@@ -29,19 +29,19 @@ wire br_taken;
 wire [31:0] addr;
 wire [31:0] data_in;
 wire [31:0] data_out;
-wire [3:0] write_enable;
-
+wire write_enable;
+//register
 wire [31:0] r1_data;
 wire [31:0] r2_data;
-wire [31:0] r1_addr;
-wire [31:0] r2_addr;
+wire [4:0] r1_addr;
+wire [4:0] r2_addr;
 wire [4:0] wr_addr;
 wire [31:0] reg_data_in;
 wire reg_write_enable;
-
+// isntruction memory
 wire [31:0] inst_pc;
 wire [31:0] instruction;
-
+//program counter
 wire [31:0] pc_addr;
 reg [31:0] pc;
 wire [31:0] next_pc;
@@ -56,6 +56,7 @@ program_counter program_counter0(
 
 // レジスタファイル
 register_file register_file0(
+    .clk(clk),
     .r1_addr(r1_addr), 
     .r2_addr(r2_addr), 
     .wr_addr(wr_addr), 
@@ -122,7 +123,6 @@ assign uart_IN_data = data_in[7:0];  // ストアするデータをモジュー�
 assign uart_we = ((addr == `UART_ADDR) && (is_store == `ENABLE)) ? 1'b1 : 1'b0;  // シリアル通信用アドレスへのストア命令実行時に送信開始信号をアサート
 assign uart_tx = uart_OUT_data;  // シリアル通信モジュールの出力はFPGA外部へと出力
 
-
 //hardware_counter
 wire [31:0] hc_OUT_data;
 hardware_counter hardware_counter0(
@@ -147,7 +147,7 @@ assign wr_addr = dstreg_num;
 assign reg_data_in = (is_load)? ma_load_value:alu_result;
 assign write_enable =(is_store)?1'b1:1'b0;
 assign reg_write_enable = reg_we;
-assign pc_addr = (alucode ==  `ALU_JALR)?r1_data+imm:pc+imm;
+assign pc_addr = (alucode ==  `ALU_JALR)? r1_data + imm : pc + imm;
 assign addr = alu_result;
 
 always @(posedge clk or negedge rst_n) begin

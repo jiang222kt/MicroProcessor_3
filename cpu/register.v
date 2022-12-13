@@ -12,15 +12,14 @@ module register_file(
 // レジスタを定義
 reg [31:0] regs [0:31];
 
-// レジスタを書き込む処理
-
 integer i;
 initial begin
     for(i=0;i<32;i=i+1)
         regs[i]=0;
 end
 
-always @ (clk) begin
+// レジスタを書き込む処理
+always @ (posedge clk) begin
   if (write_enable == `ENABLE) begin
     regs[wr_addr] <= data_in;
   end

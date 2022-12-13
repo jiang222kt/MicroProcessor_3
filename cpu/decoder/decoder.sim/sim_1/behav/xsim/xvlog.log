@@ -2,4 +2,4 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder.v" in
 INFO: [VRFC 10-311] analyzing module decoder
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/decoder_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module decoder_tb
-WARNING: [VRFC 10-2581] 2156396544 as 32-bit signed integer overflows, using -2138570752 instead [/home/denjo/b3exp/cpu/decoder_tb.v:181]
+WARNING: [VRFC 10-2581] 2156396544 as 32-bit signed integer overflows, using -2138570752 instead [/home/denjo/b3exp/cpu/decoder_tb.v:180]

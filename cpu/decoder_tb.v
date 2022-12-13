@@ -51,8 +51,7 @@ module decoder_tb;
         .aluop2_type(aluop2_type),
         .reg_we(reg_we),
         .is_load(is_load),
-        .is_store(is_store),
-        .is_halt(is_halt)
+        .is_store(is_store)
     );
 
 
