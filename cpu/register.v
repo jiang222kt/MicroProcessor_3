@@ -3,7 +3,7 @@
 module register_file(
   input clk,
   input [4:0] r1_addr, r2_addr, //読み出しアドレス
-  input [31:0] wr_addr, //書き込みアドレス
+  input [4:0] wr_addr, //書き込みアドレス
   input [31:0] data_in, //データ
   output [31:0] r1_data, r2_data, //レジスタファイルから読み出されたデータ
   input write_enable
@@ -13,8 +13,15 @@ module register_file(
 reg [31:0] regs [0:31];
 
 // レジスタを書き込む処理
+
+integer i;
+initial begin
+    for(i=0;i<32;i=i+1)
+        regs[i]=0;
+end
+
 always @ (clk) begin
-  if (write_enable = `ENABLE) begin
+  if (write_enable == `ENABLE) begin
     regs[wr_addr] <= data_in;
   end
 end

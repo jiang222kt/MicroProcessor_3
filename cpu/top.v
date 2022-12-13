@@ -1,14 +1,14 @@
 `include "define.vh"
 
-module top(
+module cpu(
     input wire clk,
-    input wire cpu_rst,
+    input wire rst_n,
     output wire uart_rx_out
 );
 
 // wire and reg
 //decoder
-reg [31:0] ir;
+wire [31:0] ir;
 wire  [4:0] srcreg1_num;
 wire  [4:0] srcreg2_num;
 wire  [4:0] dstreg_num;
@@ -20,12 +20,12 @@ wire reg_we;
 wire is_load;
 wire is_store;
 //alu
-reg [5:0] alucode;
+wire [5:0] alucode;
 wire [31:0] op1;
 wire [31:0] op2;
 wire [31:0] alu_result;
 wire br_taken;
-
+//data_mem
 wire [31:0] addr;
 wire [31:0] data_in;
 wire [31:0] data_out;
@@ -42,13 +42,16 @@ wire reg_write_enable;
 wire [31:0] inst_pc;
 wire [31:0] instruction;
 
+wire [31:0] pc_addr;
+reg [31:0] pc;
+wire [31:0] next_pc;
+
 // プログラムカウンタ
 program_counter program_counter0(
-    .clk(clk),
-    .rst_n(rst_n),
-    .addr(addr),
-    .op(op),
-    .pc(pc)
+    .pc(pc),
+    .br_taken(br_taken),
+    .addr(pc_addr),
+    .next_pc(next_pc)
 );
 
 // レジスタファイル
@@ -73,7 +76,6 @@ data_memory data_memory0(
  
 // 命令メモリ
 instruction_memory instruction_memory0(
-    .clk(clk),
     .pc(inst_pc), 
     .instruction(instruction) 
 );
@@ -90,7 +92,7 @@ decoder decoder0(
     .aluop2_type(aluop2_type), 
     .reg_we(reg_we), 
     .is_load(is_load), 
-    .is_store(is_store), 
+    .is_store(is_store)
 );
 
 // ALU
@@ -116,8 +118,8 @@ uart uart0(
 );
 
 // Memory Accessステージに以下のような記述を追加
-assign uart_IN_data = ma_store_value_raw[7:0];  // ストアするデータをモジュールへ入力
-assign uart_we = ((ma_ldst_addr == `UART_ADDR) && (ma_is_store == `ENABLE)) ? 1'b1 : 1'b0;  // シリアル通信用アドレスへのストア命令実行時に送信開始信号をアサート
+assign uart_IN_data = data_in[7:0];  // ストアするデータをモジュールへ入力
+assign uart_we = ((addr == `UART_ADDR) && (is_store == `ENABLE)) ? 1'b1 : 1'b0;  // シリアル通信用アドレスへのストア命令実行時に送信開始信号をアサート
 assign uart_tx = uart_OUT_data;  // シリアル通信モジュールの出力はFPGA外部へと出力
 
 
@@ -129,10 +131,32 @@ hardware_counter hardware_counter0(
     .COUNTER_OP(hc_OUT_data)
 );
 
-assign uart_IN_data = ma_store_value_raw[7:0];  // ストアするデータをモジュールへ入力
-assign uart_we = ((ma_ldst_addr == `UART_ADDR) && (ma_is_store == `ENABLE)) ? 1'b1 : 1'b0;  // シリアル通信用アドレスへのストア命令実行時に送信開始信号をアサート
-assign uart_tx = uart_OUT_data;  // シリアル通信モジュールの出力はFPGA外部へと出力
-assign ma_load_value =  ((ma_alucode == `ALU_LW) && (ma_ldst_addr == `HARDWARE_COUNTER_ADDR)) ? hc_OUT_data : ${データメモリから読んできた値};
+assign ma_load_value =  ((alucode == `ALU_LW) && (addr == `HARDWARE_COUNTER_ADDR)) ? hc_OUT_data : data_out;
 
+assign inst_pc = pc;
+assign ir = instruction;
+assign r1_addr = srcreg1_num;
+assign r2_addr = srcreg2_num;
+
+assign op1 = (aluop1_type == `OP_TYPE_REG)? r1_data:(aluop1_type == `OP_TYPE_IMM)?imm :32'h0;
+assign op2 = (aluop2_type == `OP_TYPE_REG)? r2_data:(aluop2_type == `OP_TYPE_IMM)?imm :(aluop2_type == `OP_TYPE_PC)?pc:32'h0;
+
+assign alucode = dec_alucode;
+assign data_in = r2_data;
+assign wr_addr = dstreg_num;
+assign reg_data_in = (is_load)? ma_load_value:alu_result;
+assign write_enable =(is_store)?1'b1:1'b0;
+assign reg_write_enable = reg_we;
+assign pc_addr = (alucode ==  `ALU_JALR)?r1_data+imm:pc+imm;
+assign addr = alu_result;
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        pc <= 32'h8000;
+    end
+    else begin
+        pc <= next_pc;
+    end
+end
 
 endmodule

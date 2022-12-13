@@ -128,8 +128,8 @@ always @(*) begin
     else
         alucode <= `ALU_NOP;
 
-    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JALR || op == `BRANCH) ? `OP_TYPE_REG : (op == `AUIPC)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
-    aluop2_type <= (op == `OP || op == `BRANCH)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD) ? `OP_TYPE_IMM : (op == `AUIPC || op == `JAL || op == `JALR) ? `OP_TYPE_PC : (op == `LUI)? `OP_TYPE_IMM : `OP_TYPE_NONE;
+    aluop1_type <= (op == `OP || op == `OPIMM || op == `STORE || op == `LOAD || op == `JALR || op == `BRANCH) ? `OP_TYPE_REG : (op == `AUIPC || op == `JAL || op == `JALR)? `OP_TYPE_IMM : `OP_TYPE_NONE; 
+    aluop2_type <= (op == `OP || op == `BRANCH)? `OP_TYPE_REG : (op == `OPIMM || op == `STORE || op == `LOAD || `LUI) ? `OP_TYPE_IMM : (op == `AUIPC || op == `JAL || op == `JALR) ? `OP_TYPE_PC : `OP_TYPE_NONE;
     is_load <= (op == `LOAD)? 1'b1: 1'b0;
     is_store <= (op == `STORE)? 1'b1 : 1'b0;
     reg_we <= (op == `OP || op == `OPIMM || op == `LUI || op == `AUIPC || op == `LOAD || (op == `JAL && dstreg_num != 5'b0) || (op == `JALR && dstreg_num != 5'b0))? 1'b1 : 1'b0;

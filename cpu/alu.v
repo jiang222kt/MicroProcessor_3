@@ -5,7 +5,7 @@ module alu(
     input wire [31:0] op1,          
     input wire [31:0] op2,          
     output reg [31:0] alu_result,   
-    output reg br_taken             
+    output reg br_taken
 );
 
 always @(*) begin

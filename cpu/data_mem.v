@@ -17,7 +17,7 @@ always @ (posedge clk) begin
 end
 
 // データを読み出す処理
-always @ (posedge clk) begin
+always @ (*) begin
   data_out <= mem[addr];
 end
 
