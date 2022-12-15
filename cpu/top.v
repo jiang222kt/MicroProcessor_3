@@ -3,7 +3,7 @@
 module cpu(
     input wire clk,
     input wire rst_n,
-    output wire uart_rx_out
+    output wire uart_tx//uart_rx_out
 );
 
 // wire and reg

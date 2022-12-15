@@ -14,7 +14,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/register.v" i
 INFO: [VRFC 10-311] analyzing module register_file
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/top.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module cpu
-INFO: [VRFC 10-2458] undeclared symbol uart_tx, assumed default net type wire [/home/denjo/b3exp/cpu/top.v:131]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/uart.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module uart
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/denjo/b3exp/cpu/cpu_testbench.v" into library xil_defaultlib

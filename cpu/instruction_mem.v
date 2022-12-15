@@ -4,7 +4,7 @@ module instruction_memory(
 );
 
 reg [31:0] mem [0:100000];
-initial $readmemh("/home/denjo/b3exp/benchmarks/tests/LoadAndStore/code.hex", mem);
+initial $readmemh("/home/denjo/b3exp/benchmarks/tests/ZeroRegister/code.hex", mem);
 
 always @(*) begin
     instruction <= mem[pc>>2];

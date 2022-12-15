@@ -13,7 +13,7 @@ module data_memory(
 reg [31:0] mem [0:100000];
 wire [31:0] current_addr;
 assign current_addr = addr>>2;
-initial $readmemh("/home/denjo/b3exp/benchmarks/tests/LoadAndStore/code.hex", mem);
+initial $readmemh("/home/denjo/b3exp/benchmarks/tests/ZeroRegister/code.hex", mem);
 
 wire [4:0]count;
 assign count = (addr[1:0] == 3)?24: (addr[1:0] == 2)? 16: (addr[1:0] == 1)?8:0;

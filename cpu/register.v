@@ -20,7 +20,7 @@ end
 
 // レジスタを書き込む処理
 always @ (posedge clk) begin
-  if (write_enable == `ENABLE) begin
+  if (write_enable == `ENABLE && wr_addr != 5'b0) begin
     regs[wr_addr] <= data_in;
   end
 end
