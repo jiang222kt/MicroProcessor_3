@@ -1,0 +1,598 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Mon Dec 19 16:19:59 2022
+| Host         : DJ00001 running 64-bit Ubuntu 22.04.1 LTS
+| Command      : report_control_sets -verbose -file cpu_control_sets_placed.rpt
+| Design       : cpu
+| Device       : xc7a200t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   520 |
+|    Minimum number of control sets                        |   520 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    12 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   520 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   514 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             254 |          174 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              14 |            4 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-----------------------------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |                    Enable Signal                    | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-----------------------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | uart0/d_reg[28]_0                                   | uart0/rst_n      |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_15_0_0_i_2_0          |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_15_0_0_i_2_3          |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_15_0_0_i_2_1          |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_15_0_0_i_2_2          |                  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/E[0]                            | uart0/rst_n      |                3 |             13 |         4.33 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_17152_17407_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_17408_17663_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_2048_2303_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_2048_2303_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_2048_2303_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_2048_2303_0_0_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_46  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_8_8_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_6 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_5 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_4 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_3 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_2 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_1 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16640_16895_16_16_i_2_0 |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_9   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_8   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_7   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_47  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_45  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_25600_25855_0_0_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5120_5375_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5120_5375_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_4608_4863_0_0_i_3_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_4096_4351_0_0_i_3_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_4096_4351_0_0_i_3_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_4096_4351_0_0_i_3_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_4096_4351_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_26368_26623_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_5_4       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_5_3       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_5_2       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_5_1       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_5_0       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_3_1       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_256_511_0_0_i_3_0       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_25600_25855_0_0_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_25600_25855_0_0_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_25600_25855_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_2304_2559_0_0_i_4_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_8_8_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_8   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_7   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_21248_21503_0_0_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_13  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_12  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_11  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_10  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_3_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_3_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_9     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_8     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_7     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_6     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_5     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_14  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_12    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_11    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_10    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1536_1791_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_13568_13823_0_0_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_13568_13823_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1280_1535_0_0_i_3_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1280_1535_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_12288_12543_0_0_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_12288_12543_0_0_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_12288_12543_0_0_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_12288_12543_0_0_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1024_1279_0_0_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1024_1279_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_30  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_44  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_43  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_42  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_41  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_40  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_39  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_38  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_37  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_36  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_35  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_34  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_33  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_32  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_31  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5120_5375_0_0_i_3_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_29  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_28  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_27  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_26  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_25  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_24  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_23  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_22  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_21  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_20  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_19  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_18  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_17  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_16  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_16384_16639_0_0_i_3_15  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_24_24_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_24_24_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_24_24_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_24_24_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_6     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_5     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_8_8_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_24_24_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_24_24_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_7     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_6     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_5     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7424_7679_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_9     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_8     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_7     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_6     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_5     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_5     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9984_10239_0_0_i_2_1    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9984_10239_0_0_i_2_0    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9728_9983_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9728_9983_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9216_9471_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9216_9471_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_9216_9471_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_8704_8959_0_0_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_8704_8959_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_8704_8959_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_8704_8959_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_9     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_8     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_7     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_6     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_11    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_10    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7936_8191_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_768_1023_0_0_i_5_2      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_768_1023_0_0_i_5_1      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_768_1023_0_0_i_5_0      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_8_8_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_8_8_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_8_8_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_8_8_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_7680_7935_8_8_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6656_6911_0_0_i_3_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6656_6911_0_0_i_3_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_9     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_8     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_7     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_6     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_5     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_13    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_12    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_11    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_10    |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_8_8_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6656_6911_0_0_i_3_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_9   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_8   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_7   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_13  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_12  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_11  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_10  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5888_6143_24_24_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5120_5375_16_16_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_8   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_2     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_8_8_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_9   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_8   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_7   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_24_24_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_9   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_5120_5375_0_0_i_3_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_7   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_6   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_5   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_4   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_3   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_2   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_14  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_13  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_12  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_11  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_10  |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_1   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6912_7167_16_16_i_2_0   |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6656_6911_0_0_i_3_4     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_6656_6911_0_0_i_3_3     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_2       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_33      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_32      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_31      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_30      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_3       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_29      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_28      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_27      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_26      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_25      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_24      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_23      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_22      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_21      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_20      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_34      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_19      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_18      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_17      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_16      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_15      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_14      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_13      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_12      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_11      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_10      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_1       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_0       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_16_2        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_16_1        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_9        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_49      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_12      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_11      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_10      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_1       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_0       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_9       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_8       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_7       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_6       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_54      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_53      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_52      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_51      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_50      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_5       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_8        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_48      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_47      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_46      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_45      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_44      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_43      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_42      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_41      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_40      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_4       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_39      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_38      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_37      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_36      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_16_16_i_5_35      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_22       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_36       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_35       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_34       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_33       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_32       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_31       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_30       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_3        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_29       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_28       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_27       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_26       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_25       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_24       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_23       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_37       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_21       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_20       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_2        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_19       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_18       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_17       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_16       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_15       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_14       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_13       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_12       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_11       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_10       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_1        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_0        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_6        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_7        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_6        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_5        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_4        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_3        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_2        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_13       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_12       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_11       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_10       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_1        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_15_0        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_9        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_8        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_7        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1024_1279_0_0_i_2_0     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_50       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_5        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_49       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_48       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_47       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_46       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_45       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_44       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_43       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_42       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_41       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_40       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_4        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_39       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_0_0_i_14_38       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_26        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_4         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_39        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_38        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_37        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_36        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_35        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_34        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_33        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_32        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_31        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_30        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_3         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_29        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_28        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_27        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_40        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_25        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_24        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_23        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_22        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_21        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_20        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_2         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_19        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_18        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_17        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_16        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_15        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_14        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_13        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_12        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_55        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_1024_1279_0_0_i_2_1     |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_9         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_8         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_7         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_65        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_64        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_63        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_62        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_61        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_60        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_6         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_59        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_58        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_57        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_56        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_14      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_54        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_53        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_52        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_51        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_50        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_5         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_49        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_48        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_47        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_46        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_45        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_44        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_43        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_42        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_41        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_28      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_41      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_40      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_4       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_39      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_38      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_37      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_36      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_35      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_34      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_33      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_32      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_31      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_30      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_3       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_29      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_10        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_27      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_26      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_25      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_24      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_23      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_22      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_21      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_20      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_2       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_19      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_18      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_17      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_16      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_15      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_13      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_43      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_11        |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_1         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_8_8_i_7_0         |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_9       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_8       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_7       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_65      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_64      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_63      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_62      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_61      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_60      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_6       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_59      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_58      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_56      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_42      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_44      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_45      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_46      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_47      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_48      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_49      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_5       |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_50      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_51      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_52      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_53      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_54      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_55      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/mem_reg_0_255_24_24_i_5_57      |                  |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | instruction_memory0/p_0_in__0                       |                  |               12 |             96 |         8.00 |
+|  clk_IBUF_BUFG |                                                     | uart0/rst_n      |              174 |            254 |         1.46 |
++----------------+-----------------------------------------------------+------------------+------------------+----------------+--------------+
+
+

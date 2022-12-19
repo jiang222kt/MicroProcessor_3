@@ -10,10 +10,10 @@ module data_memory(
   input wire is_store
 );
 
-reg [31:0] mem [0:100000];
+reg [31:0] mem [0:32'h8000];
 wire [31:0] current_addr;
 assign current_addr = addr>>2;
-initial $readmemh("/home/denjo/b3exp/benchmarks/tests/ZeroRegister/code.hex", mem);
+initial $readmemh("/home/denjo/b3exp/benchmarks/Coremark_for_Synthesis/data.hex", mem);
 
 wire [4:0]count;
 assign count = (addr[1:0] == 3)?24: (addr[1:0] == 2)? 16: (addr[1:0] == 1)?8:0;

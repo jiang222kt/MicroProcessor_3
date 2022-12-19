@@ -3,8 +3,8 @@ module instruction_memory(
     output reg [31:0] instruction
 );
 
-reg [31:0] mem [0:100000];
-initial $readmemh("/home/denjo/b3exp/benchmarks/tests/ZeroRegister/code.hex", mem);
+reg [31:0] mem [0:32'h8000];
+initial $readmemh("/home/denjo/b3exp/benchmarks/Coremark_for_Synthesis/code.hex", mem);
 
 always @(*) begin
     instruction <= mem[pc>>2];
