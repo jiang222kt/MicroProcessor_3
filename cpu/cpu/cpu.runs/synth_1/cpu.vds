@@ -1,0 +1,146 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Dec 19 14:50:38 2022
+# Process ID: 100453
+# Current directory: /home/denjo/b3exp/cpu/cpu/cpu.runs/synth_1
+# Command line: vivado -log cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
+# Log file: /home/denjo/b3exp/cpu/cpu/cpu.runs/synth_1/cpu.vds
+# Journal file: /home/denjo/b3exp/cpu/cpu/cpu.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source cpu.tcl -notrace
+Command: synth_design -top cpu -part xc7a200tsbg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 100557
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2300.395 ; gain = 0.000 ; free physical = 3313 ; free virtual = 10284
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'cpu' [/home/denjo/b3exp/cpu/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [/home/denjo/b3exp/cpu/program_counter.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (1#1) [/home/denjo/b3exp/cpu/program_counter.v:3]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [/home/denjo/b3exp/cpu/register_file.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (2#1) [/home/denjo/b3exp/cpu/register_file.v:3]
+INFO: [Synth 8-6157] synthesizing module 'data_memory' [/home/denjo/b3exp/cpu/data_memory.v:2]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file '/home/denjo/b3exp/benchmarks/tests/ZeroRegister/code.hex'; please make sure the file is added to project and has read permission, ignoring [/home/denjo/b3exp/cpu/data_memory.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'data_memory' (3#1) [/home/denjo/b3exp/cpu/data_memory.v:2]
+INFO: [Synth 8-6157] synthesizing module 'instruction_memory' [/home/denjo/b3exp/cpu/instruction_memory.v:1]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file '/home/denjo/b3exp/benchmarks/tests/ZeroRegister/code.hex'; please make sure the file is added to project and has read permission, ignoring [/home/denjo/b3exp/cpu/instruction_memory.v:7]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'instruction_memory' (4#1) [/home/denjo/b3exp/cpu/instruction_memory.v:1]
+INFO: [Synth 8-6157] synthesizing module 'decoder' [/home/denjo/b3exp/cpu/decoder.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'decoder' (5#1) [/home/denjo/b3exp/cpu/decoder.v:3]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/denjo/b3exp/cpu/alu.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (6#1) [/home/denjo/b3exp/cpu/alu.v:3]
+INFO: [Synth 8-6157] synthesizing module 'uart' [/home/denjo/b3exp/cpu/uart.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (7#1) [/home/denjo/b3exp/cpu/uart.v:1]
+INFO: [Synth 8-6157] synthesizing module 'hardware_counter' [/home/denjo/b3exp/cpu/hardware_counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'hardware_counter' (8#1) [/home/denjo/b3exp/cpu/hardware_counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cpu' (9#1) [/home/denjo/b3exp/cpu/top.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:11:07 ; elapsed = 00:11:09 . Memory (MB): peak = 3579.188 ; gain = 1278.793 ; free physical = 3484 ; free virtual = 10454
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:16:22 ; elapsed = 00:16:25 . Memory (MB): peak = 3579.188 ; gain = 1278.793 ; free physical = 3499 ; free virtual = 10484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:16:22 ; elapsed = 00:16:25 . Memory (MB): peak = 3579.188 ; gain = 1278.793 ; free physical = 3499 ; free virtual = 10484
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3579.188 ; gain = 0.000 ; free physical = 2984 ; free virtual = 9957
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/denjo/b3exp/cpu/nexys.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sysclk'. [/home/denjo/b3exp/cpu/nexys.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sysclk'. [/home/denjo/b3exp/cpu/nexys.xdc:9]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports sysclk]'. [/home/denjo/b3exp/cpu/nexys.xdc:9]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/denjo/b3exp/cpu/nexys.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/denjo/b3exp/cpu/nexys.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/denjo/b3exp/cpu/nexys.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/denjo/b3exp/cpu/nexys.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [/home/denjo/b3exp/cpu/nexys.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [/home/denjo/b3exp/cpu/nexys.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [/home/denjo/b3exp/cpu/nexys.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [/home/denjo/b3exp/cpu/nexys.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/denjo/b3exp/cpu/nexys.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/denjo/b3exp/cpu/nexys.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/denjo/b3exp/cpu/nexys.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/denjo/b3exp/cpu/nexys.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/home/denjo/b3exp/cpu/nexys.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/home/denjo/b3exp/cpu/nexys.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/home/denjo/b3exp/cpu/nexys.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/home/denjo/b3exp/cpu/nexys.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/denjo/b3exp/cpu/nexys.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/denjo/b3exp/cpu/nexys.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/denjo/b3exp/cpu/nexys.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6367.375 ; gain = 0.000 ; free physical = 297 ; free virtual = 6884
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 6367.375 ; gain = 0.000 ; free physical = 297 ; free virtual = 6884
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:27:53 ; elapsed = 00:28:00 . Memory (MB): peak = 6367.375 ; gain = 4066.980 ; free physical = 3665 ; free virtual = 10266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:27:53 ; elapsed = 00:28:00 . Memory (MB): peak = 6367.375 ; gain = 4066.980 ; free physical = 3665 ; free virtual = 10266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:27:53 ; elapsed = 00:28:00 . Memory (MB): peak = 6367.375 ; gain = 4066.980 ; free physical = 3665 ; free virtual = 10266
+---------------------------------------------------------------------------------
